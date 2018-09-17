@@ -3,16 +3,20 @@ from django.db import models
 from django.utils import timezone
 
 
-class Category(models.Model):  # The Category table name that inherits models.Model
+class Priority(models.Model):
+    # The Priority table name that inherits models.Model
     name = models.CharField(max_length=100)  # Like a varchar
-
-    class Meta:
-        verbose_name = ("Category")
-        verbose_name_plural = ("Categories")
 
     def __str__(self):
         return self.name  # name to be shown when called
 
+
+class Status(models.Model):
+    # The Priority table name that inherits models.Model
+    name = models.CharField(max_length=100)  # Like a varchar
+
+    def __str__(self):
+        return self.name  # name to be shown when called
 
 class TodoList(models.Model):  # Todolist able name that inherits models.Model
     title = models.CharField(max_length=250)  # a varchar
@@ -21,7 +25,8 @@ class TodoList(models.Model):  # Todolist able name that inherits models.Model
         default=timezone.now().strftime("%Y-%m-%d"))  # a date
     due_date = models.DateField(
         default=timezone.now().strftime("%Y-%m-%d"))  # a date
-    category = models.ForeignKey(Category, default="general")  # a foreignkey
+    priority = models.ForeignKey(Priority, default="normal")  # a foreignkey
+    status = models.ForeignKey(Status, default="pending")
 
     class Meta:
         ordering = ["-created"]  # ordering by the created field

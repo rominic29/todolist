@@ -203,7 +203,7 @@ button {
     margin-right: 10px;
     font-size: 16px;
 }
-[class*='category-'] {
+[class*='priority-'] {
     display: inline-block;
     font-size: 10px;
     background: #444;
@@ -218,23 +218,17 @@ button {
     text-transform: uppercase;
     margin-right: 20px;
 }
-.category- {
+.priority- {
     background: transparent;
 }
-.category-Personal {
-    background: #2980b9;
+.priority-Normal {
+    background: #FFC30F;
 }
-.category-Work {
-    background: #8e44ad;
+.priority-High {
+    background: #FF5733;
 }
-.category-School {
-    background: #f39c12;
-}
-.category-Cleaning {
-    background: #16a085;
-}
-.category-Other {
-    background: #d35400;
+.priority-Urgent {
+    background: #C70039;
 }
 footer {
     text-align: center;
@@ -276,7 +270,7 @@ footer a {
     color: #16a085;
 }
 /* custom select menu */
-.taskCategory {
+.taskPriority {
     -webkit-appearance: none;
             appearance: none;
     cursor: pointer;
@@ -292,7 +286,7 @@ footer a {
     color: #777;
     pointer-events: none;
 }
-.taskCategory option {
+.taskPriority option {
     background: #fff;
     border: none;
     outline: none;
